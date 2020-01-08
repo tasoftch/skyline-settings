@@ -23,8 +23,47 @@
 
 namespace Skyline\Setting;
 
-
+/**
+ * The setting manager knows how the settings are stored an is able to access specific settings by their name.
+ * In main sense,
+ *
+ * @package Skyline\Setting
+ */
 interface SettingManagerInterface
 {
     const SERVICE_NAME = 'settingManager';
+
+    /**
+     * Fetches a setting named $name from data base.
+     *
+     * @param $name
+     * @param null $group
+     * @param string|int|null $user
+     * @param bool $valueOnly
+     * @return array|mixed
+     */
+    public function getSetting($name, $group = NULL, $user = NULL, bool $valueOnly = true);
+
+    /**
+     * @param $name
+     * @param $value
+     * @param null $group
+     * @param string|int|null $user
+     * @return bool
+     */
+    public function declareSetting($name, $value, $group = NULL, $user = NULL);
+
+    /**
+     * @param $name
+     * @param null $group
+     * @param string|int|null $user
+     * @return bool
+     */
+    public function removeSetting($name, $group = NULL, $user = NULL);
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function removeSettingAll($name);
 }
