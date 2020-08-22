@@ -14,9 +14,9 @@
     }
   },
   "require" : {
-    "php": "^7.2",
-    "skyline/pdo" : "dev-master",
-    "skyline/kernel": "dev-master"
+    "php": ">=7.2",
+    "skyline/pdo" : "^0.9",
+    "skyline/kernel": "^0.8"
   },
   "require-dev": {
     "phpunit/phpunit": "^6"
